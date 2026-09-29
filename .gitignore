@@ -1,0 +1,9 @@
+# No third-party archives or generated visual assets in the public repository.
+*.zip
+*.mrpack
+*.jar
+/resourcepacks/
+/dist/
+/source-downloads/*.json
+__pycache__/
+*.tmp

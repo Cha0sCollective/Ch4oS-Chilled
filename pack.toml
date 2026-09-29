@@ -1,0 +1,13 @@
+name = "Ch4oS-Chilled"
+version = "0.1.5"
+description = "A fresh Minecraft 1.21.1 NeoForge pack built around Chill Mod 1.3 Free 128x."
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "fb8a6c1d58beb96ed094706c9c63acc3e246afb8a1d188647b1d1754ed221d8e"
+
+[versions]
+minecraft = "1.21.1"
+neoforge = "21.1.252"

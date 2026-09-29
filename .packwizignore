@@ -1,0 +1,12 @@
+/.git/**
+/.gitignore
+/.gitattributes
+/.packwizignore
+/README.md
+/docs/**
+/tools/**
+/resourcepacks/**
+**/.gitkeep
+*.zip
+*.mrpack
+*.tmp

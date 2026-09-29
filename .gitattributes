@@ -1,0 +1,2 @@
+# Preserve exact file bytes so Git does not invalidate packwiz hashes.
+* -text
