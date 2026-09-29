@@ -9,7 +9,13 @@ The five mod JARs download from their pinned Modrinth releases through packwiz. 
 ## Install
 
 1. Create a new Minecraft 1.21.1 / NeoForge 21.1.252 instance in Prism or another launcher. Find that instance's **game directory** (the folder containing `mods`, `config`, and `resourcepacks`).
-2. Use [packwiz-installer](https://packwiz.infra.link/tutorials/installing/packwiz-installer/) with this repository's raw `pack.toml` URL to install the pinned mods, original Derivative download, and our client defaults into that game directory. For a local copy of this folder, its `file:///.../pack.toml` URL also works. Do this before starting Minecraft.
+2. Download the official [packwiz-installer bootstrap JAR](https://github.com/packwiz/packwiz-installer-bootstrap/releases) into the instance game directory. In Prism's instance settings, set this pre-launch command (or run the command once from the game directory before starting Minecraft):
+
+   ```text
+   "$INST_JAVA" -jar packwiz-installer-bootstrap.jar https://raw.githubusercontent.com/Cha0sCollective/Ch4oS-Chilled/main/pack.toml
+   ```
+
+   This installs the pinned mods, original Derivative download, and client defaults. The [packwiz installer guide](https://packwiz.infra.link/tutorials/installing/packwiz-installer/) describes the equivalent setup for MultiMC-compatible launchers.
 3. Download `chillmod1.3128x.zip` from the creator's [Chill Mod 1.3 Free page](https://theartofblocks.com/en/worlds/chill-mod-free-version). Keep the creator archive intact.
 4. With Python 3.10 or newer installed, run:
 
