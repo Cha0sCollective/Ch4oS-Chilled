@@ -1,0 +1,66 @@
+# Ch4oS-Chilled 0.2.1: DERCODE 1.7 / 1440p / RTX 4070 starting preset.
+# Normal Iris options only; the downloaded shader ZIP remains unchanged.
+# Select DERCODE in Iris to use this independent profile.
+
+# Original Derivative water and rain ripples.
+WATER_STYLE=0
+WATER_WAVE_HEIGHT=1.2
+WATER_WAVE_SPEED=1.0
+WATER_PARALLAX=true
+WATER_CAUSTICS=true
+RAIN_SPLASH_EFFECT=true
+RAIN_SPLASH_BILATERAL=true
+FORCE_WET_EFFECT=true
+WATER_CHROMATIC_ABERRATION=0
+
+# Native resolution, temporal antialiasing, shadows and reflections.
+RENDER_SCALE=1.0
+TAA_ENABLED=true
+shadowMapResolution=2048
+shadowDistance=128.0
+PCF_SAMPLES=12
+RAYTRACE_SAMPLES=16
+RAYTRACE_REFINEMENT_STEPS=4
+REFLECTION_FILTER=true
+SSAO_ENABLED=true
+SSAO_SAMPLES=16
+GI_ENABLED=false
+
+# Derivative atmosphere with moderate sampling.
+TONEMAP=AcademyCustom
+PURKINJE_SHIFT=false
+COLOR_GRADING=false
+FOG_TYPE=1
+VOLUMETRIC_FOG=true
+VOLUMETRIC_FOG_DENSITY=0.002
+VOLUMETRIC_FOG_SAMPLES=20
+VOLUMETRIC_LIGHT_STRENGTH=0.2
+FULL_AERIAL_PERSPECTIVE=true
+CLOUD_LOCAL_COVERAGE=false
+CLOUD_CUMULUS_SAMPLES=24
+CLOUD_CUMULUS_SUNLIGHT_SAMPLES=4
+CLOUD_CUMULUS_SKYLIGHT_SAMPLES=2
+CLOUDS_SHADOW=false
+PC_SHADOW=false
+VC_SHADOW=false
+
+# LB has no block normal/specular maps; water reflections remain enabled.
+NORMAL_MAP=false
+SPECULAR_MAP=false
+PARALLAX=false
+
+# Gentle regular bloom; extra bloom layers and camera effects reduced.
+BLOOM_AMOUNT=0.6
+COD_BLOOM_INTENSITY=0.0
+FOG_BLOOM_RAIN_INTENSITY=0.0
+FOG_BLOOM_MULTIPLIER=0.0
+BLOOMY_FOG=false
+DIRTY_LENS=false
+DIRTY_LENS_ENABLED=0
+CHROMATIC_ABERRATION_ENABLED=0
+DOF_ENABLED=false
+MOTION_BLUR=false
+CINEMATIC_EFFECT=false
+VIGNETTE_ENABLED=false
+EYE_SQUINT_ENABLED=0
+ELYTRA_BLUR=0

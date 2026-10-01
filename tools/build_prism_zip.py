@@ -32,13 +32,14 @@ You do not need to extract it or import a .mrpack.
 
 Minecraft 1.21.1 / NeoForge 21.1.252 / Java 21 / maximum memory 8 GiB.
 The first launch downloads the official packwiz installer, then packwiz installs
-the five mods, LB Photo Realism Reload 128x and original Bliss 2.1.2.
+the five mods, LB Photo Realism Reload 128x, Bliss 2.1.2 and DERCODE 1.7.
 Allow the first download to finish. Later launches check the live GitHub profile
 for updates. Internet access is required.
 
 This ZIP contains only our instance configuration and startup script.
 Third-party installers, mods and visual packs are fetched from official URLs.
-LB and Bliss are selected automatically after packwiz finishes.
+LB and Bliss are selected automatically after packwiz finishes. Select DERCODE
+in the shader menu to use its separate 1440p preset with Derivative water.
 
 Profile: https://raw.githubusercontent.com/Cha0sCollective/Ch4oS-Chilled/main/pack.toml
 '''

@@ -1,0 +1,13 @@
+name = "DERCODE"
+filename = "DERCODE [1.7].zip"
+side = "client"
+pin = true
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/7680/105/DERCODE%20%5B1.7%5D.zip"
+hash-format = "sha512"
+hash = "8f30b0578f603c0f2c93c7b3ba4dd2b790cd8aaf217eb27ce68909b2d0722245a7a3221a798b27761f10886f2ebcc3da30db59650c5486289a78c9049c8286b5"
+
+[update.curseforge]
+file-id = 7680105
+project-id = 1348190

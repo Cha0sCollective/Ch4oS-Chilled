@@ -1,16 +1,16 @@
 # Ch4oS-Chilled
 
-Minecraft **1.21.1**, **NeoForge 21.1.252**, **LB Photo Realism Reload! 128x** and **Bliss 2.1.2**. Pack version **0.2.0**.
+Minecraft **1.21.1**, **NeoForge 21.1.252**, **LB Photo Realism Reload! 128x**, **Bliss 2.1.2** and **DERCODE 1.7**. Pack version **0.2.1**.
 
-Packwiz downloads all five mod JARs, the original LB resource-pack ZIP and the exact Bliss release from pinned Modrinth URLs. This repository contains download metadata and our settings. There are no bundled third-party binaries, shader source edits or local asset preparation steps.
+Packwiz downloads all five mod JARs, the original LB resource-pack ZIP and the exact Bliss release from pinned Modrinth URLs, plus the original DERCODE 1.7 ZIP from CurseForge. This repository contains download metadata and our settings. There are no bundled third-party binaries, shader source edits or local asset preparation steps.
 
 ## Install
 
-For **Prism on Windows**, choose **Add Instance → Import from ZIP** and select `Ch4oS-Chilled-0.2.0-Prism-packwiz.zip` directly. Launch the imported instance. Our pre-launch script downloads the official packwiz bootstrap, verifies its SHA-256, and runs packwiz against the live GitHub profile. Packwiz downloads the five mods, LB and Bliss, and checks for updates on later launches. No third-party binaries are bundled in the ZIP.
+For **Prism on Windows**, choose **Add Instance → Import from ZIP** and select `Ch4oS-Chilled-0.2.1-Prism-packwiz.zip` directly. Launch the imported instance. Our pre-launch script downloads the official packwiz bootstrap, verifies its SHA-256, and runs packwiz against the live GitHub profile. Packwiz downloads the five mods, LB, Bliss and DERCODE, and checks for updates on later launches. No third-party binaries are bundled in the ZIP.
 
-The `public-source.zip` is a source archive for editing the pack; **it cannot be imported into a launcher**. The optional `.mrpack` is a separate launcher export with download references for launchers supporting Modrinth packs.
+The `public-source.zip` is a source archive for editing the pack; **it cannot be imported into a launcher**. The optional `.mrpack` is a separate launcher export with direct download references, including CurseForge. It is not a Modrinth-hosting submission; Prism users should use the packwiz ZIP.
 
-Set the instance to use **64-bit Java 21** and **8 GiB maximum memory** on a 32 GiB system. A fresh instance selects LB and enables Bliss with the balanced 1440p / RTX 4070 starting settings. See [visual defaults, provenance and validation scope](docs/visual-defaults.md).
+Set the instance to use **64-bit Java 21** and **8 GiB maximum memory** on a 32 GiB system. A fresh instance selects LB and enables Bliss with the balanced 1440p / RTX 4070 starting settings. DERCODE has a separate balanced preset: select `DERCODE [1.7].zip` in **Video Settings → Shader Packs** to load its Derivative water and rain ripples. Iris keeps settings separately for each shader. Do not apply an upstream quality preset afterward unless you want to replace our settings. See [visual defaults, provenance and validation scope](docs/visual-defaults.md).
 
 Alternatively, use the live packwiz profile:
 
@@ -38,20 +38,22 @@ For an existing Chill/Derivative instance, import the Prism ZIP as a separate in
 | Forgified Fabric API | 0.116.15+2.3.5 |
 | LB Photo Realism Reload! | 6.3-1.21.3 (supports 1.21.1) |
 | Bliss Shaders | 2.1.2 |
+| DERCODE (alternative shader) | 1.7 |
 
-LB's archive declares a newer resource-pack format even though the release explicitly lists 1.21.1 support. The defaults acknowledge this mismatch without changing the ZIP; the menu may still label it as made for a newer version. In-game appearance and Bliss compilation need client testing for this new setup.
+LB's archive declares a newer resource-pack format even though the release explicitly lists 1.21.1 support. The defaults acknowledge this mismatch without changing the ZIP; the menu may still label it as made for a newer version. In-game appearance and shader compilation need client testing. DERCODE includes DH terrain/water programs for the Overworld and Nether; Distant Horizons is not installed yet and its compatibility remains untested.
 
 ## Sources and terms
 
 - [LB Photo Realism Reload! by 1LotS, exact release](https://modrinth.com/resourcepack/lb-photo-realism-reload/version/vGVLaEbp). The downloaded archive contains no separate license file. This profile directs the creator-hosted download and does not redistribute its assets.
 - [Bliss 2.1.2 by X0nk](https://modrinth.com/shader/bliss-shader/version/kC2Y8q1P), based on Chocapic13's shaders. The original ZIP includes [these license rules](docs/bliss-license.md), which remain unchanged in the download.
+- [DERCODE 1.7 by the DERCODE team, exact release](https://www.curseforge.com/minecraft/shaders/dercode/files/7680105). The pinned original download retains its bundled [README and terms](docs/dercode-notice.txt). Our preset changes only normal Iris options; there is no shader fork or patch.
 - The mod metadata points to the creators' pinned Modrinth downloads. Those JARs are not in this repository or our exports.
 
 ## Build
 
 ```powershell
 packwiz refresh
-packwiz --cache ../.cache/packwiz modrinth export --output ../dist/Ch4oS-Chilled-0.2.0.mrpack
+packwiz --cache ../.cache/packwiz modrinth export --restrictDomains=false --output ../dist/Ch4oS-Chilled-0.2.1.mrpack
 python tools/build_source_zip.py
 python tools/build_prism_zip.py
 ```

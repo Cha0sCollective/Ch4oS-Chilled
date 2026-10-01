@@ -43,6 +43,15 @@ file = "shaderpacks/Bliss_v2.1.2_(Chocapic13_Shaders_edit).zip.txt"
 hash = "032c32325497cf75104a6e26314adbb3faafffc9d771b9ff6a0bc66c8cf9e2e8"
 
 [[files]]
+file = "shaderpacks/DERCODE [1.7].zip.txt"
+hash = "2d8f5bf2a9045e104fe37daaa6165a697f61c6518b6279cf8da7bbbdde008223"
+
+[[files]]
 file = "shaderpacks/bliss-shader.pw.toml"
 hash = "fc262c1cc52427f57dcfb195c5804e232d56be8a49d4e8f154df6164c6643620"
+metafile = true
+
+[[files]]
+file = "shaderpacks/dercode.pw.toml"
+hash = "4b29f4a556cf016c167c02e209ad1f4151307356e893190338c6b73b2f25ed31"
 metafile = true
