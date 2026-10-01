@@ -38,7 +38,8 @@ for updates. Internet access is required.
 
 This ZIP contains only our instance configuration and startup script.
 Third-party installers, mods and visual packs are fetched from official URLs.
-LB and Bliss are selected automatically after packwiz finishes. Select DERCODE
+LB and Bliss are selected automatically, with Bliss rain puddles enabled.
+Select DERCODE
 in the shader menu to use its separate 1440p preset with Derivative water.
 
 Profile: https://raw.githubusercontent.com/Cha0sCollective/Ch4oS-Chilled/main/pack.toml
