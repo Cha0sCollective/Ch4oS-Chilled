@@ -1,0 +1,14 @@
+name = "LB Photo Realism Reload!"
+filename = "LBPR Reload! v.6.3 for mc1.21.3.zip"
+side = "client"
+pin = true
+
+[download]
+url = "https://cdn.modrinth.com/data/Hg9I7jyY/versions/vGVLaEbp/LBPR%20Reload%21%20v.6.3%20for%20mc1.21.3.zip"
+hash-format = "sha512"
+hash = "f0417a33778531df715d2ba0d4981d336f42b4e04bb49e1788d3af02b078b4f73f23401559be24ab0af6cd8908a589ea7d030537393b1cb7cbdd6faecb680beb"
+
+[update]
+[update.modrinth]
+mod-id = "Hg9I7jyY"
+version = "vGVLaEbp"

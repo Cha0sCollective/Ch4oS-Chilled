@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "config/iris.properties"
-hash = "08df6553243dabe2a47d6212c47d1694b92256b6876a1134efa6c63eaa279b0c"
+hash = "0272e6b502d0a60a9606f56c01da9f61bd4b1f0835220fa80f6656da037dde1f"
 
 [[files]]
 file = "mods/connector.pw.toml"
@@ -31,13 +31,18 @@ metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "8136c9dd22999bb0fae1e96632212cbb337db27349b441a51479d1b0e680c1aa"
+hash = "1fcb89f81fabbb4989267a06c0eb34417e4994b067b7d96f64c94fa6f6c235df"
 
 [[files]]
-file = "shaderpacks/Derivative-25.1.0-Chilled-[DC Fork]-Iris-1.8-r3.zip.txt"
-hash = "d4b2bad1ac13238c0b0ffa5b9c0171d5e9e1ae33b4adb59182277f4866921339"
+file = "resourcepacks/lb-photo-realism-reload.pw.toml"
+hash = "3f66596675a46b96c9c567d8e057eec34bf84a1186d0ae069e26c7fc41612b33"
+metafile = true
 
 [[files]]
-file = "source-downloads/derivative.pw.toml"
-hash = "c13b4d34d33ec9b22c5188ea276918e1db26d127290b05d4344bb7c750cbf5a8"
+file = "shaderpacks/Bliss_v2.1.2_(Chocapic13_Shaders_edit).zip.txt"
+hash = "032c32325497cf75104a6e26314adbb3faafffc9d771b9ff6a0bc66c8cf9e2e8"
+
+[[files]]
+file = "shaderpacks/bliss-shader.pw.toml"
+hash = "fc262c1cc52427f57dcfb195c5804e232d56be8a49d4e8f154df6164c6643620"
 metafile = true

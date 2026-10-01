@@ -2,5 +2,5 @@ version:3955
 renderDistance:16
 simulationDistance:10
 graphicsMode:1
-resourcePacks:["file/Chill-Mod-1.3-Free-128x-Base.zip","file/Chill-Mod-1.3-Free-128x-Plants.zip","file/Chill-Mod-1.3-Free-128x-Block-Overlays.zip","file/Chill-Mod-1.3-Free-128x-Equipment.zip"]
-incompatibleResourcePacks:[]
+resourcePacks:["file/LBPR Reload! v.6.3 for mc1.21.3.zip"]
+incompatibleResourcePacks:["file/LBPR Reload! v.6.3 for mc1.21.3.zip"]

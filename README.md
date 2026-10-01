@@ -1,37 +1,56 @@
 # Ch4oS-Chilled
 
-Minecraft **1.21.1**, **NeoForge 21.1.252**, Chill Mod **1.3 Free**, and the Derivative **[DC Fork]** compatibility shader. This is the public, source-only packwiz profile for the client-tested 0.1.5 visual setup. Set the Minecraft launcher to Java 21 and about 8 GiB maximum memory on a 32 GiB computer.
+Minecraft **1.21.1**, **NeoForge 21.1.252**, **LB Photo Realism Reload! 128x** and **Bliss 2.1.2**. Pack version **0.2.0**.
 
-The five mod JARs download from their pinned Modrinth releases through packwiz. Packwiz also fetches the original Derivative 25.1.0 release from CurseForge into `source-downloads/`. The local preparation script applies our Iris 1.8 fixes, retains Derivative's bundled `License.txt` and original main shader settings menu, and writes the selected shader to `shaderpacks/`.
-
-**Chill Mod is not in this repository or its download ZIP.** The creator's [free download](https://theartofblocks.com/en/worlds/chill-mod-free-version) is a Google Drive archive containing four nested resource-pack folders. Download it from that page yourself, then run the local preparation step. The script verifies SHA-256 `c3666301b3a72bcf3e2410adf95167a10822b361c8e0507e16b0a95da340a507`, creates four Minecraft-ready ZIPs in your instance, and adds Minecraft 1.21.1 compatibility metadata. It never uploads the files.
+Packwiz downloads all five mod JARs, the original LB resource-pack ZIP and the exact Bliss release from pinned Modrinth URLs. This repository contains download metadata and our settings. There are no bundled third-party binaries, shader source edits or local asset preparation steps.
 
 ## Install
 
-1. Create a new Minecraft 1.21.1 / NeoForge 21.1.252 instance in Prism or another launcher. Find that instance's **game directory** (the folder containing `mods`, `config`, and `resourcepacks`).
-2. Download the official [packwiz-installer bootstrap JAR](https://github.com/packwiz/packwiz-installer-bootstrap/releases) into the instance game directory. In Prism's instance settings, set this pre-launch command (or run the command once from the game directory before starting Minecraft):
+Import `Ch4oS-Chilled-0.2.0.mrpack` into Prism, Modrinth App, or another launcher supporting Modrinth packs. The accompanying client-test ZIP contains this `.mrpack` and instructions; extract it and import the `.mrpack` inside. The launcher downloads the third-party files from their official URLs.
+
+Set the instance to use **64-bit Java 21** and **8 GiB maximum memory** on a 32 GiB system. A fresh instance selects LB and enables Bliss with the balanced 1440p / RTX 4070 starting settings. See [visual defaults, provenance and validation scope](docs/visual-defaults.md).
+
+Alternatively, use the live packwiz profile:
+
+1. Create a Minecraft 1.21.1 / NeoForge 21.1.252 instance. Find its game directory, containing `mods`, `config` and `resourcepacks`.
+2. Download the official [packwiz-installer bootstrap JAR](https://github.com/packwiz/packwiz-installer-bootstrap/releases) into that game directory.
+3. Set this Prism pre-launch command, or run it from the game directory with Java 21:
 
    ```text
    "$INST_JAVA" -jar packwiz-installer-bootstrap.jar https://raw.githubusercontent.com/Cha0sCollective/Ch4oS-Chilled/main/pack.toml
    ```
 
-   This installs the pinned mods, original Derivative download, and client defaults. The [packwiz installer guide](https://packwiz.infra.link/tutorials/installing/packwiz-installer/) describes the equivalent setup for MultiMC-compatible launchers.
-3. Download `chillmod1.3128x.zip` from the creator's [Chill Mod 1.3 Free page](https://theartofblocks.com/en/worlds/chill-mod-free-version). Keep the creator archive intact.
-4. With Python 3.10 or newer installed, run:
+   See the [packwiz installer guide](https://packwiz.infra.link/tutorials/installing/packwiz-installer/) for other MultiMC-compatible launchers.
+4. Launch Minecraft. No manual Chill download or Python preparation step is needed.
 
-   ```powershell
-   python tools/prepare_visuals.py --instance "C:\path\to\instance\.minecraft" --chill-archive "C:\path\to\chillmod1.3128x.zip"
-   ```
+For an existing Chill/Derivative instance, importing the `.mrpack` as a separate instance is the cleanest client test. When using packwiz to update an existing instance, locally prepared Chill/Derivative ZIPs from older versions may remain on disk, but the new defaults select only LB and Bliss. Back up existing controls and video settings before replacing `options.txt`.
 
-   Run this command from a local clone or extracted copy of this source-only repository. The script requires only the Python standard library.
-5. Launch Minecraft. The resource-pack menu should show **Equipment**, **Block Overlays**, **Plants**, then **Base** from top to bottom. Iris should select `Derivative-25.1.0-Chilled-[DC Fork]-Iris-1.8-r3.zip` with the balanced 1440p starting preset.
+## Included foundation
 
-If packwiz-installer has not fetched Derivative yet, the preparation script stops with the missing file path. If either creator download has changed, it stops on the hash check rather than applying the tested compatibility edits to an unknown release.
+| Component | Version |
+| --- | --- |
+| Iris Shaders | 1.8.12 |
+| Sodium | 0.6.13 |
+| Continuity | 3.0.0+1.21.neoforge |
+| Sinytra Connector | 2.0.0-beta.17 |
+| Forgified Fabric API | 0.116.15+2.3.5 |
+| LB Photo Realism Reload! | 6.3-1.21.3 (supports 1.21.1) |
+| Bliss Shaders | 2.1.2 |
 
-## Source and terms
+LB's archive declares a newer resource-pack format even though the release explicitly lists 1.21.1 support. The defaults acknowledge this mismatch without changing the ZIP; the menu may still label it as made for a newer version. In-game appearance and Bliss compilation need client testing for this new setup.
 
-- Chill Mod 1.3 Free: [The Art Of Blocks official download](https://theartofblocks.com/en/worlds/chill-mod-free-version). The archive contains no separate license file; this repository carries no Chill assets.
-- Derivative 25.1.0: [original release](https://www.curseforge.com/minecraft/shaders/derivative-main/files/8529690). Its bundled [DERCODE 2.5 license](docs/derivative-license.txt) permits credited forks and redistribution subject to its conditions. The locally built fork keeps that license, preserves the main settings menu, and carries `[DC Fork]` in its name. Original DC authors: _DureXXX, M1zore, Skeeder461, Frs0n, and _Sone4ka_. [Original DC project](https://www.curseforge.com/minecraft/shaders/derivative-main) · [DC Team Discord](https://discord.gg/UavqfqAwzv).
-- The mod metadata points to the creators' pinned Modrinth downloads. Those files are not in this repository.
+## Sources and terms
 
-The tested 0.1.5 setup kept ordinary bloom and removed the shader's additional wet-weather bloom that produced white edge flashes while turning. The user confirmed that this revision removed the flash. No MVT rerun was requested for these visual changes.
+- [LB Photo Realism Reload! by 1LotS, exact release](https://modrinth.com/resourcepack/lb-photo-realism-reload/version/vGVLaEbp). The downloaded archive contains no separate license file. This profile directs the creator-hosted download and does not redistribute its assets.
+- [Bliss 2.1.2 by X0nk](https://modrinth.com/shader/bliss-shader/version/kC2Y8q1P), based on Chocapic13's shaders. The original ZIP includes [these license rules](docs/bliss-license.md), which remain unchanged in the download.
+- The mod metadata points to the creators' pinned Modrinth downloads. Those JARs are not in this repository or our exports.
+
+## Build
+
+```powershell
+packwiz refresh
+packwiz --cache ../.cache/packwiz modrinth export --output ../dist/Ch4oS-Chilled-0.2.0.mrpack
+python tools/build_source_zip.py
+```
+
+The source ZIP contains this packwiz profile. The `.mrpack` contains official download references and our defaults. MVT was not rerun for these visual changes at the user's request.
