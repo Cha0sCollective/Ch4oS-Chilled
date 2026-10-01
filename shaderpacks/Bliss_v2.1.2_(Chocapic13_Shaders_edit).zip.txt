@@ -1,4 +1,4 @@
-# Ch4oS-Chilled 0.2.4: 1440p / RTX 4070 starting settings.
+# Ch4oS-Chilled 0.2.5: 1440p / RTX 4070 starting settings.
 # The upstream Bliss ZIP is unchanged. These are normal Iris shader options.
 shadowMapResolution=2048
 shadowDistance=128.0
@@ -16,11 +16,11 @@ RESOURCEPACK_SKY=0
 BLOOM_STRENGTH=0.75
 Specular_Reflections=true
 Screen_Space_Reflections=true
-Sky_reflection=false
+Sky_reflection=true
 Rough_reflections=true
 Puddles=true
 Puddle_Size=1.0
-reflection_quality=20.0
+reflection_quality=100.0
 WATER_REFLECTIONS=true
 SCREENSPACE_REFLECTIONS=true
 SSR_STEPS=100
@@ -32,3 +32,4 @@ WATER_WAVE_STRENGTH=1.0
 WATER_WAVE_SPEED=0.8
 Vanilla_like_water=false
 Sun_specular_Strength=0
+Dynamic_SSR_quality=false
