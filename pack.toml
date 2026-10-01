@@ -1,12 +1,12 @@
 name = "Ch4oS-Chilled"
-version = "0.2.2"
+version = "0.2.3"
 description = "Minecraft 1.21.1 on NeoForge with LB Photo Realism Reload 128x, Bliss 2.1.2 and optional DERCODE 1.7."
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "0b3125163e4c2f886c92c1ce22ba3d5e679206339304805c7affd3bcff7c5904"
+hash = "7ab1088375ccc6af62984511250a6e90dc8dd2a32440544f3606176b91038499"
 
 [versions]
 minecraft = "1.21.1"

@@ -24,6 +24,7 @@ The sidecar `shaderpacks/Bliss_v2.1.2_(Chocapic13_Shaders_edit).zip.txt` contain
 - Volumetric clouds at the upstream 0.5 quality and 8 volumetric-light samples.
 - TAA enabled at native resolution; TAA upscaling disabled.
 - Built-in rain puddles enabled at size 1.0, with specular, screen-space, sky and rough reflections enabled; reflection quality 20.0. These generated puddles do not require block normal/specular maps from LB. Bliss's normal water reflections remain enabled.
+- Water reflections, screen-space reflections, sun/moon and sky/fog reflections, and refraction enabled. Water SSR quality (`SSR_STEPS`) 100; dirt amount 0.08, wave strength 1.0 and wave speed 0.8; vanilla-like water disabled. Water SSR quality is separate from the ground/puddle reflection quality of 20.0.
 - Bloom strength 0.75. Motion blur, depth of field, parallax, high-quality SSGI, voxel floodfill lighting and translucent entity separation off.
 - Bliss's own sky remains selected. Other weather, color and atmosphere settings use upstream defaults.
 - Game defaults: Fancy graphics, 16 render chunks and 10 simulation chunks.
@@ -51,3 +52,5 @@ For version 0.2.1, a clean packwiz-installer 0.5.14 client installation from the
 For version 0.2.2, the user confirmed that Bliss puddles appear in the running client and requested these settings as the default. DERCODE testing showed bright rectangular ground reflections during rain, which persisted with forced ground reflections disabled; DERCODE remains available as an alternative. The Bliss change uses supported Iris options only, with the original shader ZIP untouched. It does not add Derivative's rain-ripple behavior. No performance benchmark or Distant Horizons test was performed.
 
 Version 0.2.2 release checks passed for both matching 12-file packwiz profiles, supported Bliss option names/values, original visual download hashes and bundled notices. The Prism import ZIP, source ZIP and optional launcher export were rebuilt and checked; the export has eight download references and the archives contain no third-party JARs or asset ZIPs. MVT was not rerun for this settings change, as requested.
+
+Version 0.2.3 applies the requested water settings: SSR quality 100 (previously 30), dirt amount 0.08 (previously 0.14) and wave speed 0.8 (previously 1.0). The other requested water toggles and wave strength are now explicit in the sidecar and retain their upstream values. Puddle settings and the DERCODE profile are unchanged. Supported shader options, profile hashes and rebuilt export contents were checked; the new water appearance and performance still need client testing. MVT was not rerun.

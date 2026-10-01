@@ -1,16 +1,16 @@
 # Ch4oS-Chilled
 
-Minecraft **1.21.1**, **NeoForge 21.1.252**, **LB Photo Realism Reload! 128x**, **Bliss 2.1.2** and **DERCODE 1.7**. Pack version **0.2.2**.
+Minecraft **1.21.1**, **NeoForge 21.1.252**, **LB Photo Realism Reload! 128x**, **Bliss 2.1.2** and **DERCODE 1.7**. Pack version **0.2.3**.
 
 Packwiz downloads all five mod JARs, the original LB resource-pack ZIP and the exact Bliss release from pinned Modrinth URLs, plus the original DERCODE 1.7 ZIP from CurseForge. This repository contains download metadata and our settings. There are no bundled third-party binaries, shader source edits or local asset preparation steps.
 
 ## Install
 
-For **Prism on Windows**, choose **Add Instance → Import from ZIP** and select `Ch4oS-Chilled-0.2.2-Prism-packwiz.zip` directly. Launch the imported instance. Our pre-launch script downloads the official packwiz bootstrap, verifies its SHA-256, and runs packwiz against the live GitHub profile. Packwiz downloads the five mods, LB, Bliss and DERCODE, and checks for updates on later launches. No third-party binaries are bundled in the ZIP.
+For **Prism on Windows**, choose **Add Instance → Import from ZIP** and select `Ch4oS-Chilled-0.2.3-Prism-packwiz.zip` directly. Launch the imported instance. Our pre-launch script downloads the official packwiz bootstrap, verifies its SHA-256, and runs packwiz against the live GitHub profile. Packwiz downloads the five mods, LB, Bliss and DERCODE, and checks for updates on later launches. No third-party binaries are bundled in the ZIP.
 
 The `public-source.zip` is a source archive for editing the pack; **it cannot be imported into a launcher**. The optional `.mrpack` is a separate launcher export with direct download references, including CurseForge. It is not a Modrinth-hosting submission; Prism users should use the packwiz ZIP.
 
-Set the instance to use **64-bit Java 21** and **8 GiB maximum memory** on a 32 GiB system. A fresh instance selects LB and enables Bliss with built-in rain puddles and reflections enabled in the balanced 1440p / RTX 4070 starting settings. DERCODE has a separate balanced preset: select `DERCODE [1.7].zip` in **Video Settings → Shader Packs** to load its Derivative water and rain ripples. Iris keeps settings separately for each shader. Do not apply an upstream quality preset afterward unless you want to replace our settings. See [visual defaults, provenance and validation scope](docs/visual-defaults.md).
+Set the instance to use **64-bit Java 21** and **8 GiB maximum memory** on a 32 GiB system. A fresh instance selects LB and enables Bliss with built-in rain puddles and reflections enabled in the balanced 1440p / RTX 4070 starting settings, with water SSR quality 100, dirt amount 0.08 and wave speed 0.8. DERCODE has a separate balanced preset: select `DERCODE [1.7].zip` in **Video Settings → Shader Packs** to load its Derivative water and rain ripples. Iris keeps settings separately for each shader. Do not apply an upstream quality preset afterward unless you want to replace our settings. See [visual defaults, provenance and validation scope](docs/visual-defaults.md).
 
 Alternatively, use the live packwiz profile:
 
@@ -53,7 +53,7 @@ LB's archive declares a newer resource-pack format even though the release expli
 
 ```powershell
 packwiz refresh
-packwiz --cache ../.cache/packwiz modrinth export --restrictDomains=false --output ../dist/Ch4oS-Chilled-0.2.2.mrpack
+packwiz --cache ../.cache/packwiz modrinth export --restrictDomains=false --output ../dist/Ch4oS-Chilled-0.2.3.mrpack
 python tools/build_source_zip.py
 python tools/build_prism_zip.py
 ```
