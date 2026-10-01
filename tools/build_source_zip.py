@@ -20,7 +20,9 @@ def main() -> None:
         raise ValueError(f"Unexpected packwiz index files: {listed ^ expected}")
     allowed = listed | {".gitattributes", ".gitignore", ".packwizignore", "README.md",
                        "pack.toml", "index.toml", "docs/visual-defaults.md",
-                       "docs/bliss-license.md", "tools/build_source_zip.py"}
+                       "docs/bliss-license.md", "tools/build_source_zip.py",
+                       "tools/build_prism_zip.py", "launcher/instance.cfg",
+                       "launcher/mmc-pack.json", "launcher/minecraft/packwiz-start.ps1"}
     output = ROOT.parent / "dist" / f"Ch4oS-Chilled-{pack['version']}-public-source.zip"
     output.parent.mkdir(parents=True, exist_ok=True)
     with ZipFile(output, "w", compression=ZIP_DEFLATED) as archive:

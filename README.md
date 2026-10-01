@@ -6,7 +6,9 @@ Packwiz downloads all five mod JARs, the original LB resource-pack ZIP and the e
 
 ## Install
 
-Import `Ch4oS-Chilled-0.2.0.mrpack` into Prism, Modrinth App, or another launcher supporting Modrinth packs. The accompanying client-test ZIP contains this `.mrpack` and instructions; extract it and import the `.mrpack` inside. The launcher downloads the third-party files from their official URLs.
+For **Prism on Windows**, choose **Add Instance → Import from ZIP** and select `Ch4oS-Chilled-0.2.0-Prism-packwiz.zip` directly. Launch the imported instance. Our pre-launch script downloads the official packwiz bootstrap, verifies its SHA-256, and runs packwiz against the live GitHub profile. Packwiz downloads the five mods, LB and Bliss, and checks for updates on later launches. No third-party binaries are bundled in the ZIP.
+
+The `public-source.zip` is a source archive for editing the pack; **it cannot be imported into a launcher**. The optional `.mrpack` is a separate launcher export with download references for launchers supporting Modrinth packs.
 
 Set the instance to use **64-bit Java 21** and **8 GiB maximum memory** on a 32 GiB system. A fresh instance selects LB and enables Bliss with the balanced 1440p / RTX 4070 starting settings. See [visual defaults, provenance and validation scope](docs/visual-defaults.md).
 
@@ -23,7 +25,7 @@ Alternatively, use the live packwiz profile:
    See the [packwiz installer guide](https://packwiz.infra.link/tutorials/installing/packwiz-installer/) for other MultiMC-compatible launchers.
 4. Launch Minecraft. No manual Chill download or Python preparation step is needed.
 
-For an existing Chill/Derivative instance, importing the `.mrpack` as a separate instance is the cleanest client test. When using packwiz to update an existing instance, locally prepared Chill/Derivative ZIPs from older versions may remain on disk, but the new defaults select only LB and Bliss. Back up existing controls and video settings before replacing `options.txt`.
+For an existing Chill/Derivative instance, import the Prism ZIP as a separate instance for client testing. When using packwiz to update an existing instance, locally prepared Chill/Derivative ZIPs from older versions may remain on disk, but the new defaults select only LB and Bliss. Back up existing controls and video settings before replacing `options.txt`.
 
 ## Included foundation
 
@@ -51,6 +53,7 @@ LB's archive declares a newer resource-pack format even though the release expli
 packwiz refresh
 packwiz --cache ../.cache/packwiz modrinth export --output ../dist/Ch4oS-Chilled-0.2.0.mrpack
 python tools/build_source_zip.py
+python tools/build_prism_zip.py
 ```
 
-The source ZIP contains this packwiz profile. The `.mrpack` contains official download references and our defaults. MVT was not rerun for these visual changes at the user's request.
+The Prism ZIP is directly importable and runs packwiz at launch. The source ZIP contains this packwiz profile for development. The optional `.mrpack` contains official download references and our defaults. MVT was not rerun for these visual changes at the user's request.

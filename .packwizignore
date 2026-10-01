@@ -5,6 +5,7 @@
 /README.md
 /docs/**
 /tools/**
+/launcher/**
 **/.gitkeep
 *.zip
 *.mrpack
