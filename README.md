@@ -1,31 +1,26 @@
 # Ch4oS-Chilled
 
-Minecraft **1.21.1**, **NeoForge 21.1.252**, **LB Photo Realism Reload! 128x**, **Bliss 2.1.2** and **DERCODE 1.7**. Pack version **0.2.5**.
+Minecraft **1.21.1**, **NeoForge 21.1.252**, **Patrix 32x**, **Bliss 2.1.2** and optional **DERCODE 1.7**. Pack version **0.3.0**.
 
-Packwiz downloads all five mod JARs, the original LB resource-pack ZIP and the exact Bliss release from pinned Modrinth URLs, plus the original DERCODE 1.7 ZIP from CurseForge. This repository contains download metadata and our settings. There are no bundled third-party binaries, shader source edits or local asset preparation steps.
+Packwiz downloads seven mod JARs and the original shader/resource archives from pinned creator-hosted URLs. This repository and its exports contain download metadata and our settings. No third-party binaries, shader source edits or asset preparation steps are bundled.
 
 ## Install
 
-For **Prism on Windows**, choose **Add Instance → Import from ZIP** and select `Ch4oS-Chilled-0.2.5-Prism-packwiz.zip` directly. Launch the imported instance. Our pre-launch script downloads the official packwiz bootstrap, verifies its SHA-256, and runs packwiz against the live GitHub profile. Packwiz downloads the five mods, LB, Bliss and DERCODE, and checks for updates on later launches. No third-party binaries are bundled in the ZIP.
+For **Prism on Windows**, choose **Add Instance → Import from ZIP** and select `Ch4oS-Chilled-0.3.0-Prism-packwiz.zip`. Launch the instance. Our pre-launch script downloads the official packwiz bootstrap, verifies its SHA-256, and runs the live GitHub profile. The first launch installs the seven mods, Patrix 32x basic, Bliss and DERCODE; later launches check for updates.
 
-The `public-source.zip` is a source archive for editing the pack; **it cannot be imported into a launcher**. The optional `.mrpack` is a separate launcher export with direct download references, including CurseForge. It is not a Modrinth-hosting submission; Prism users should use the packwiz ZIP.
+Use **64-bit Java 21** and **8 GiB maximum memory** on a 32 GiB system. Patrix 32x and Bliss are selected automatically. Bliss enables POM, material AO, porosity, LabPBR emission/SSS and the tested water/puddle settings. See [visual defaults and validation scope](docs/visual-defaults.md).
 
-Set the instance to use **64-bit Java 21** and **8 GiB maximum memory** on a 32 GiB system. A fresh instance selects LB and enables Bliss with built-in rain puddles and reflections enabled in the balanced 1440p / RTX 4070 starting settings, with water SSR quality 100, dirt amount 0.08 and wave speed 0.8. Ground sky and scenery reflections are enabled for visible puddles, with fixed ground SSR quality 100, dynamic quality reduction off and Detailed Roughness on. The user confirmed this combination looks better with the glitter controlled. Solid-block sun/moon highlights are disabled. Water reflections retain their separate settings. DERCODE has a separate balanced preset: select `DERCODE [1.7].zip` in **Video Settings → Shader Packs** to load its Derivative water and rain ripples. Iris keeps settings separately for each shader. Do not apply an upstream quality preset afterward unless you want to replace our settings. See [visual defaults, provenance and validation scope](docs/visual-defaults.md).
+Players who obtain **Patrix 128x** from its creator can [swap resolutions using this guide](docs/patrix-128x.md). Only 32x basic is installed by the pack. Optional Patrix packs are player downloads.
 
-Alternatively, use the live packwiz profile:
+The `public-source.zip` is for editing this packwiz profile and **cannot be imported into a launcher**. The optional `.mrpack` is a separate launcher export with direct CurseForge and Modrinth download references; it is not a Modrinth-hosting submission. Prism users should use the packwiz ZIP.
 
-1. Create a Minecraft 1.21.1 / NeoForge 21.1.252 instance. Find its game directory, containing `mods`, `config` and `resourcepacks`.
-2. Download the official [packwiz-installer bootstrap JAR](https://github.com/packwiz/packwiz-installer-bootstrap/releases) into that game directory.
-3. Set this Prism pre-launch command, or run it from the game directory with Java 21:
+Alternatively, create a Minecraft 1.21.1 / NeoForge 21.1.252 instance and run the official [packwiz-installer bootstrap](https://github.com/packwiz/packwiz-installer-bootstrap/releases) in its game directory with Java 21:
 
-   ```text
-   "$INST_JAVA" -jar packwiz-installer-bootstrap.jar https://raw.githubusercontent.com/Cha0sCollective/Ch4oS-Chilled/main/pack.toml
-   ```
+```text
+"$INST_JAVA" -jar packwiz-installer-bootstrap.jar https://raw.githubusercontent.com/Cha0sCollective/Ch4oS-Chilled/main/pack.toml
+```
 
-   See the [packwiz installer guide](https://packwiz.infra.link/tutorials/installing/packwiz-installer/) for other MultiMC-compatible launchers.
-4. Launch Minecraft. No manual Chill download or Python preparation step is needed.
-
-For an existing Chill/Derivative instance, import the Prism ZIP as a separate instance for client testing. When using packwiz to update an existing instance, locally prepared Chill/Derivative ZIPs from older versions may remain on disk, but the new defaults select only LB and Bliss. Back up existing controls and video settings before replacing `options.txt`.
+See the [packwiz installer guide](https://packwiz.infra.link/tutorials/installing/packwiz-installer/) for other MultiMC-compatible launchers. Back up controls and video settings before manually replacing `options.txt`. Existing installations can retain old unmanaged resource ZIPs, but the new default selects Patrix only.
 
 ## Included foundation
 
@@ -36,26 +31,28 @@ For an existing Chill/Derivative instance, import the Prism ZIP as a separate in
 | Continuity | 3.0.0+1.21.neoforge |
 | Sinytra Connector | 2.0.0-beta.17 |
 | Forgified Fabric API | 0.116.15+2.3.5 |
-| LB Photo Realism Reload! | 6.3-1.21.3 (supports 1.21.1) |
+| Entity Texture Features | 7.2.4, NeoForge 1.21 build |
+| Entity Model Features | 3.3.9, NeoForge 1.21 build |
+| Patrix 32x basic | Minecraft 1.21/1.21.1, CurseForge file 5866765 |
 | Bliss Shaders | 2.1.2 |
-| DERCODE (alternative shader) | 1.7 |
+| DERCODE, alternative shader | 1.7 |
 
-LB's archive declares a newer resource-pack format even though the release explicitly lists 1.21.1 support. The defaults acknowledge this mismatch without changing the ZIP; the menu may still label it as made for a newer version. The user confirmed Bliss rain puddles in client testing. DERCODE testing showed bright rectangular ground reflections during rain; it remains an optional shader. DERCODE includes DH terrain/water programs for the Overworld and Nether; Distant Horizons is not installed yet and its compatibility remains untested.
+Continuity supports Patrix's connected textures. ETF and EMF support its included custom mob textures, models and animations. Bliss is the configured Patrix shader. DERCODE keeps its independent earlier preset and has known bright ground reflections during rain; its material mapping remains disabled. Distant Horizons is not installed and remains untested.
 
 ## Sources and terms
 
-- [LB Photo Realism Reload! by 1LotS, exact release](https://modrinth.com/resourcepack/lb-photo-realism-reload/version/vGVLaEbp). The downloaded archive contains no separate license file. This profile directs the creator-hosted download and does not redistribute its assets.
-- [Bliss 2.1.2 by X0nk](https://modrinth.com/shader/bliss-shader/version/kC2Y8q1P), based on Chocapic13's shaders. The original ZIP includes [these license rules](docs/bliss-license.md), which remain unchanged in the download.
-- [DERCODE 1.7 by the DERCODE team, exact release](https://www.curseforge.com/minecraft/shaders/dercode/files/7680105). The pinned original download retains its bundled [README and terms](docs/dercode-notice.txt). Our preset changes only normal Iris options; there is no shader fork or patch.
-- The mod metadata points to the creators' pinned Modrinth downloads. Those JARs are not in this repository or our exports.
+- [Patrix 32x basic by patrix1221, exact release](https://www.curseforge.com/minecraft/texture-packs/patrix-32x/files/5866765). Its archive retains [these bundled credits](docs/patrix-credits.txt). The downloaded archive has no separate redistribution license; no asset redistribution grant is inferred. Packwiz directs the original creator-hosted download.
+- [Bliss 2.1.2 by X0nk](https://modrinth.com/shader/bliss-shader/version/kC2Y8q1P), based on Chocapic13's shaders, retains its [bundled license](docs/bliss-license.md).
+- [DERCODE 1.7, exact release](https://www.curseforge.com/minecraft/shaders/dercode/files/7680105) retains its bundled [README and terms](docs/dercode-notice.txt).
+- The seven mod metadata files direct pinned official Modrinth downloads. Those JARs are not in this repository or its exports.
 
 ## Build
 
 ```powershell
 packwiz refresh
-packwiz --cache ../.cache/packwiz modrinth export --restrictDomains=false --output ../dist/Ch4oS-Chilled-0.2.5.mrpack
+packwiz --cache ../.cache/packwiz modrinth export --restrictDomains=false --output ../dist/Ch4oS-Chilled-0.3.0.mrpack
 python tools/build_source_zip.py
 python tools/build_prism_zip.py
 ```
 
-The Prism ZIP is directly importable and runs packwiz at launch. The source ZIP contains this packwiz profile for development. The optional `.mrpack` contains official download references and our defaults. MVT was not rerun for these visual changes at the user's request.
+The Prism ZIP runs packwiz at launch. The source ZIP contains the editable profile. The optional `.mrpack` contains official download references and our defaults. MVT is not rerun for these visual changes, as requested.

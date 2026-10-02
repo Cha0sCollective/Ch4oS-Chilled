@@ -2,5 +2,5 @@ version:3955
 renderDistance:16
 simulationDistance:10
 graphicsMode:1
-resourcePacks:["file/LBPR Reload! v.6.3 for mc1.21.3.zip"]
-incompatibleResourcePacks:["file/LBPR Reload! v.6.3 for mc1.21.3.zip"]
+resourcePacks:["file/Patrix_1.21_32x_basic.zip"]
+incompatibleResourcePacks:[]

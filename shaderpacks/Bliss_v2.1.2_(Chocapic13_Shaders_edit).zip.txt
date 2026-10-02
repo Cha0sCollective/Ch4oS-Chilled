@@ -1,4 +1,4 @@
-# Ch4oS-Chilled 0.2.5: 1440p / RTX 4070 starting settings.
+# Ch4oS-Chilled 0.3.0: 1440p / RTX 4070 starting settings.
 # The upstream Bliss ZIP is unchanged. These are normal Iris shader options.
 shadowMapResolution=2048
 shadowDistance=128.0
@@ -8,7 +8,6 @@ TAA=true
 TAA_UPSCALING=false
 MOTION_BLUR=false
 DOF_QUALITY=-1
-POM=false
 HQ_SSGI=false
 LPV_ENABLED=false
 TRANSLUCENT_ENTITIES=false
@@ -33,3 +32,14 @@ WATER_WAVE_SPEED=0.8
 Vanilla_like_water=false
 Sun_specular_Strength=0
 Dynamic_SSR_quality=false
+# Patrix LabPBR materials; moderate POM distance and adaptive sampling.
+POM=true
+Adaptive_Step_length=true
+POM_DEPTH=0.25
+MAX_ITERATIONS=40
+MAX_DIST=25.0
+MATERIAL_AO=true
+Porosity=true
+EMISSIVE_TYPE=2
+SSS_TYPE=2
+MOB_SSS=true

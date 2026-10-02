@@ -15,6 +15,16 @@ hash = "2e082857985c7550efdad38a1997b9805051b07fb61b0cd30921e786a8521130"
 metafile = true
 
 [[files]]
+file = "mods/entity-model-features.pw.toml"
+hash = "17562ef595423154aa1155ce0ee4f297e89a6a276a01f4480469a15e74934965"
+metafile = true
+
+[[files]]
+file = "mods/entitytexturefeatures.pw.toml"
+hash = "09eb46592ff39bfa2af9d147fad9a9f333a3e9a8f27cedd8869c0aa1e45931ef"
+metafile = true
+
+[[files]]
 file = "mods/forgified-fabric-api.pw.toml"
 hash = "c490f7b680875f034af39a1556911d6edb1dcdd76a114ee6a4eca0f158cd92b2"
 metafile = true
@@ -31,16 +41,16 @@ metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "1fcb89f81fabbb4989267a06c0eb34417e4994b067b7d96f64c94fa6f6c235df"
+hash = "c77146a4eb3e8ed95c45884b7d86e6c139bc97f12054a079864a80cdd9cdcf86"
 
 [[files]]
-file = "resourcepacks/lb-photo-realism-reload.pw.toml"
-hash = "3f66596675a46b96c9c567d8e057eec34bf84a1186d0ae069e26c7fc41612b33"
+file = "resourcepacks/patrix-32x.pw.toml"
+hash = "920dea9b47053a472603cb529c99a8928449bb96b92351c7d117f34e4a89466b"
 metafile = true
 
 [[files]]
 file = "shaderpacks/Bliss_v2.1.2_(Chocapic13_Shaders_edit).zip.txt"
-hash = "8baebcde9b512750a905446b063877a40f86446980d57d3e44804c225c848afb"
+hash = "390dfb3f56f7ab732f630eeb94685eb75dbd342039c0d1c2753ca785a50f4113"
 
 [[files]]
 file = "shaderpacks/DERCODE [1.7].zip.txt"

@@ -14,14 +14,14 @@ def main() -> None:
     expected = {"options.txt", "config/iris.properties",
                 "shaderpacks/Bliss_v2.1.2_(Chocapic13_Shaders_edit).zip.txt",
                 "shaderpacks/DERCODE [1.7].zip.txt",
-                "resourcepacks/lb-photo-realism-reload.pw.toml",
+                "resourcepacks/patrix-32x.pw.toml",
                 "shaderpacks/bliss-shader.pw.toml", "shaderpacks/dercode.pw.toml"}
     expected.update(f"mods/{path.name}" for path in (ROOT / "mods").glob("*.pw.toml"))
-    if listed != expected or len(listed) != 12:
+    if listed != expected or len(listed) != 14:
         raise ValueError(f"Unexpected packwiz index files: {listed ^ expected}")
     allowed = listed | {".gitattributes", ".gitignore", ".packwizignore", "README.md",
                        "pack.toml", "index.toml", "docs/visual-defaults.md",
-                       "docs/bliss-license.md", "docs/dercode-notice.txt", "tools/build_source_zip.py",
+                       "docs/bliss-license.md", "docs/dercode-notice.txt", "docs/patrix-credits.txt", "docs/patrix-128x.md", "tools/build_source_zip.py",
                        "tools/build_prism_zip.py", "launcher/instance.cfg",
                        "launcher/mmc-pack.json", "launcher/minecraft/packwiz-start.ps1"}
     output = ROOT.parent / "dist" / f"Ch4oS-Chilled-{pack['version']}-public-source.zip"

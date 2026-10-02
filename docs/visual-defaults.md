@@ -1,49 +1,38 @@
 # Visual defaults and source downloads
 
-Ch4oS-Chilled 0.2.0 replaces the four Chill packs with **LB Photo Realism Reload! 128x**, and the Derivative compatibility fork with the original **Bliss 2.1.2** release. Version 0.2.1 adds the original **DERCODE 1.7** as an alternative with its own Iris settings file; Bliss stays selected by default. Version 0.2.2 enables the client-tested Bliss rain puddles and reflections by default. The five existing rendering mods and Minecraft/NeoForge versions remain pinned.
+Ch4oS-Chilled **0.3.0** replaces LB with the original **Patrix 1.21 32x basic** archive and configures **Bliss 2.1.2** for its LabPBR materials. Minecraft/NeoForge and the five original rendering mods stay pinned. Entity Texture Features and Entity Model Features are added for the custom mob features included in Patrix. DERCODE stays available with its separate existing preset.
 
 ## Exact upstream files
 
 | Component | Release | Installed file | Source |
 | --- | --- | --- | --- |
-| LB Photo Realism Reload! by 1LotS | 6.3-1.21.3, listed for Minecraft 1.21.1–1.21.3 | `LBPR Reload! v.6.3 for mc1.21.3.zip` | [Modrinth release](https://modrinth.com/resourcepack/lb-photo-realism-reload/version/vGVLaEbp) |
-| Bliss by X0nk, based on Chocapic13's shaders | 2.1.2 | `Bliss_v2.1.2_(Chocapic13_Shaders_edit).zip` | [Modrinth release](https://modrinth.com/shader/bliss-shader/version/kC2Y8q1P) |
-| DERCODE by DureXXX and the DERCODE team | 1.7, CurseForge file 7680105 | `DERCODE [1.7].zip` | [CurseForge release](https://www.curseforge.com/minecraft/shaders/dercode/files/7680105) |
+| Patrix by patrix1221 | 1.21/1.21.1, file 5866765 | `Patrix_1.21_32x_basic.zip` | [CurseForge release](https://www.curseforge.com/minecraft/texture-packs/patrix-32x/files/5866765) |
+| Bliss by X0nk | 2.1.2 | `Bliss_v2.1.2_(Chocapic13_Shaders_edit).zip` | [Modrinth release](https://modrinth.com/shader/bliss-shader/version/kC2Y8q1P) |
+| DERCODE | 1.7, file 7680105 | `DERCODE [1.7].zip` | [CurseForge release](https://www.curseforge.com/minecraft/shaders/dercode/files/7680105) |
 
-Packwiz downloads LB and Bliss from pinned Modrinth URLs and DERCODE from its pinned CurseForge CDN URL and verifies their SHA-512 hashes. None of these ZIPs is modified, renamed, unpacked, or included in this repository. No local resource-pack builder or shader patch step is needed.
+Packwiz verifies pinned SHA-512 hashes for these original downloads. No resource/shader ZIP is changed or bundled in our repository or exports. Patrix declares resource pack format 34, matching Minecraft 1.21/1.21.1, so no incompatibility acknowledgement is needed. Its archive includes 956 block normal maps, 935 block specular maps, 7,754 connected-texture normal maps, 78 custom entity models and 16 random-entity rule files.
 
-LB's downloaded `pack.mcmeta` declares format 42 (Minecraft 1.21.3), despite the release listing support for 1.21.1. The default `incompatibleResourcePacks` entry acknowledges this metadata mismatch so Minecraft retains the selected pack. Its resource-pack menu can still show the newer-version label; we do not rewrite the creator archive to suppress it. The newer-version label remains visible independently of the shader settings.
+The downloaded Patrix archive includes `CREDITS.txt`, copied byte-for-byte to [patrix-credits.txt](patrix-credits.txt), but no separate license/terms file. We infer no asset redistribution grant and use the original creator-hosted download. Bliss and DERCODE keep the licenses/notices bundled in their original archives; see [Bliss license](bliss-license.md) and [DERCODE notice](dercode-notice.txt). Higher-resolution Patrix is a player-supplied option; follow the [128x swap guide](patrix-128x.md).
 
-The LB ZIP has no separate license/terms file. No redistribution grant is inferred from that absence. The pack profile uses the creator's Modrinth download. Bliss includes `LICENSE.md` with Chocapic13's sharing rules; the download retains that license and original title. See the [exact bundled Bliss license](bliss-license.md). DERCODE retains the original `README.txt` in its download; [this exact notice](dercode-notice.txt) is also included for reference. Its terms are taken from the downloaded archive. We distribute download metadata and our own settings, with no shader source changes. No third-party asset or shader source is copied into our public distribution.
+## Bliss Patrix preset
 
-## Starting preset
+The `Bliss_v2.1.2_(Chocapic13_Shaders_edit).zip.txt` sidecar supplies normal Iris options for 1440p, an RTX 4070-class GPU and a modern CPU. Shader source is untouched.
 
-The sidecar `shaderpacks/Bliss_v2.1.2_(Chocapic13_Shaders_edit).zip.txt` contains normal Iris options for a 1440p display, RTX 4070-class GPU and modern CPU. Shader source is untouched.
+- POM on: adaptive step length, depth 0.25, 40 maximum iterations and 25-block maximum distance. The normal maps supply height data; no separate texture-resolution setting is needed to swap 32x for 128x.
+- Material ambient occlusion and porosity on. `EMISSIVE_TYPE=2` and `SSS_TYPE=2` use LabPBR emission/subsurface maps with hardcoded fallback for unmapped modded materials. Mob SSS is enabled.
+- The tested ground/puddle settings stay: specular, sky, scenery reflections and Detailed Roughness on; fixed ground SSR quality 100 with dynamic reduction off; puddles at size 1.0. Solid-block sun/moon highlight multiplier remains zero.
+- Water settings stay: specular, scenery and sky/fog reflections, sun/moon highlights and refraction on; water SSR quality 100, dirt amount 0.08, wave strength 1.0 and wave speed 0.8; vanilla-like water off.
+- 2048 shadows out to 128 blocks, cloud quality 0.5, 8 volumetric-light samples, native TAA, bloom 0.75. Motion blur, depth of field, high-quality SSGI, LPV and translucent entity separation stay off.
+- Game defaults: Fancy graphics, 16 render chunks, 10 simulation chunks; Patrix 32x basic selected. Use Java 21 and 8 GiB maximum heap as a starting point. This is not a measured FPS guarantee.
 
-- 2048 shadow map, 128-block shadow distance.
-- Volumetric clouds at the upstream 0.5 quality and 8 volumetric-light samples.
-- TAA enabled at native resolution; TAA upscaling disabled.
-- Built-in rain puddles enabled at size 1.0, with specular, screen-space and sky reflections enabled; ground SSR quality is fixed at 100.0 (`reflection_quality=100.0`, `Dynamic_SSR_quality=false`). Detailed Roughness is on (`Rough_reflections=true`). Solid-block sun/moon highlight strength remains zero (`Sun_specular_Strength=0`). These generated puddles do not require block normal/specular maps from LB. Bliss's normal water reflections remain enabled.
-- Water reflections, screen-space reflections, sun/moon and sky/fog reflections, and refraction enabled. Water SSR quality (`SSR_STEPS`) 100; dirt amount 0.08, wave strength 1.0 and wave speed 0.8; vanilla-like water disabled. Water SSR quality (`SSR_STEPS`) and ground/puddle reflection quality (`reflection_quality`) are separate settings, both currently set to 100.
-- Bloom strength 0.75. Motion blur, depth of field, parallax, high-quality SSGI, voxel floodfill lighting and translucent entity separation off.
-- Bliss's own sky remains selected. Other weather, color and atmosphere settings use upstream defaults.
-- Game defaults: Fancy graphics, 16 render chunks and 10 simulation chunks.
+Patrix material maps change how reflections and wet surfaces look even with identical shader options. The earlier LB screenshot tests do not validate the new Patrix appearance; client testing is still needed.
 
-Set **Java 21** and **8 GiB maximum heap** in the launcher on a 32 GiB system. Launcher memory is not controlled by packwiz. These are starting settings, not an FPS guarantee.
+## DERCODE alternative
 
-## DERCODE starting preset
+The DERCODE 1.7 ZIP and sidecar are unchanged. That alternative retains Derivative water style 0, rain ripples, native TAA, 2048 shadows and reduced extra bloom, but normal/specular material maps and terrain parallax remain disabled. Bliss is the configured Patrix default. DERCODE has a known bright-ground-reflection issue during rain. Distant Horizons is not installed; future compatibility needs testing with the chosen Iris/DH versions.
 
-`shaderpacks/DERCODE [1.7].zip.txt` stores independent normal Iris options for the same 1440p / RTX 4070 system. Select **DERCODE [1.7].zip** in Iris's Shader Packs menu to apply them. Switching back to Bliss uses its independent puddle settings file. This appears as a custom combination in the upstream preset selector; no custom preset is inserted into the shader source. DERCODE's release warns about its preset system, so the values are supplied explicitly rather than relying on a named preset.
+## Historical validation through 0.2.5
 
-- Original Derivative **Water Style 0**, upstream wave height 1.2 and speed 1.0, water parallax, caustics, rain ripples and wet surfaces enabled.
-- Native render scale 1.0 (instead of the archive's 2.0), TAA, 2048 shadows out to 128 blocks, 12 shadow-filter samples, 16 reflection steps and 4 refinement steps, 16-sample SSAO; GI off.
-- Derivative atmosphere/tonemapper, 24 cloud samples and 20 fog samples. Cloud shadows off.
-- Regular bloom amount 0.6; added CoD/fog bloom contributions reduced to zero. Chromatic aberration, dirty lens, vignette, motion blur, depth of field and elytra blur off.
-- Block normal/specular maps and block parallax off for LB; water reflections remain enabled.
-
-The original ZIP contains DH terrain/water programs for the Overworld and Nether, including a DH-specific branch in the water-wave code. DH is not installed by this change; future compatibility needs testing with the chosen DH/Iris versions, including the End. No DH integration code is removed or changed. These are starting settings, not measured performance results or confirmation that the shader compiles in-game.
-
-## Validation scope
 
 Release checks verify the packwiz index and download hashes, installed filenames, supported shader option names/values, resource/shader defaults and source-only export contents. On October 1, 2026, a fresh Java 21 / packwiz-installer 0.5.14 client installation completed all 10 of 10 files successfully; the installed downloads and defaults were verified against the profile. The Windows Prism import ZIP's exact startup script was also run from a newly extracted folder with spaces in its path under Windows PowerShell 5.1, starting with no installer JARs: it downloaded the official bootstrap, ran the live GitHub packwiz profile, and installed all 10 files with matching hashes and defaults. The archive contains the `instance.cfg` and `mmc-pack.json` manifests recognized by Prism's import format; GUI import itself was not automated. At the 0.2.0 release checks, the build had not yet passed an in-game visual or shader compilation check; earlier Chill/Derivative client results do not validate LB/Bliss. MVT is not rerun for this visual-only change, as requested.
 
@@ -58,3 +47,8 @@ Version 0.2.3 applies the requested water settings: SSR quality 100 (previously 
 Version 0.2.4 promotes the combined grass-reflection fix after the user confirmed it in the running client: solid-block sky reflections off and solid-block sun/moon highlights at strength zero. Puddle scenery reflections, water SSR quality 100, water sun/moon and sky/fog reflections, refraction, dirt amount 0.08, wave strength 1.0 and wave speed 0.8 remain enabled or unchanged as applicable. The DERCODE profile and original shader ZIPs are unchanged. Release checks verified both packwiz profiles, supported option values, upstream visual archive hashes and rebuilt export contents. MVT was not rerun for this settings change.
 
 Version 0.2.5 restores sky reflections to make puddles visible while retaining the disabled solid-block sun/moon highlights. Turning off Detailed Roughness alone did not resolve the reported glitter, and disabling ground scenery reflections looked worse. The user reported that the glitter was gone or much reduced with ground scenery reflections restored, ground SSR quality fixed at 100 and dynamic SSR quality disabled. Re-enabling Detailed Roughness with that fixed sampling then looked better with the glitter controlled, according to the user; the final defaults keep Detailed Roughness on. All requested water options and the DERCODE profile are unchanged. Supported option values, both profile hashes and rebuilt export contents were verified; original shader ZIPs remain unmodified. No FPS benchmark or MVT run was performed.
+
+
+## Version 0.3.0 validation
+
+The pinned Patrix archive matched the SHA-1 reported by CurseForge and our SHA-512 download hash, passed ZIP integrity checks and declared pack format 34. Its bundled credits and material/model assets were inspected. Every supplied Bliss option name/value was checked against the exact original shader release. The resource/shader archives remain unmodified. A clean Java 21 / packwiz-installer 0.5.14 client install completed all 14 of 14 files successfully. All ten downloaded JARs/ZIPs matched the pinned hashes and all four installed settings files matched the profile byte-for-byte. Both development/public profiles match, and all 42 Bliss option names and values are supported by the exact upstream ZIP. EMF requires ETF 7.2.0 or newer, satisfied by the pinned ETF 7.2.4. Rebuilt exports were checked for expected manifests, defaults and ten official download references, with no bundled third-party JARs or asset ZIPs. No new in-game Patrix result or performance benchmark is claimed. MVT is not rerun for these visual changes.
